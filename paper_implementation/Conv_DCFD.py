@@ -39,6 +39,7 @@ def bases_list(ks, num_bases):
         bases = torch.Tensor(normed_bases)
         bases = F.pad(bases, (pad, pad, pad, pad, 0, 0)).view(num_bases, ks*ks)
         b_list.append(bases)
+    print(torch.cat(b_list, 0))
     return torch.cat(b_list, 0)
 
 class Conv_DCFD(nn.Module):
@@ -124,7 +125,7 @@ class Conv_DCFD(nn.Module):
 
 
 if __name__ == '__main__':
-    layer = Conv_DCFD(3, 10, kernel_size=3, inter_kernel_size=5, padding=1, stride=2, bias=True)
+    layer = Conv_DCFD(3, 10, kernel_size=3, inter_kernel_size=5, padding=1, stride=2, num_bases=6, bias=True)
     data = torch.randn(10 , 3, 224, 224)
     print(layer(data).shape) # torch.Size([10, 10, 112, 112])
 

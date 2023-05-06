@@ -103,3 +103,7 @@ def calculate_FB_bases(L1):
 
 	return psi, c, kq_Psi
 
+
+if __name__ == "__main__":
+	psi, _, _ = calculate_FB_bases(3)
+	print(psi, psi.shape)
