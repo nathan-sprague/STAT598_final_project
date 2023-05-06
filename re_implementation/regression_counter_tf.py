@@ -6,7 +6,7 @@ import cv2
 import json
 import numpy as np
 import math
-from Conv_DCFD_tf2 import *
+from Conv_DCFD_tf import *
 
 trainDir = "ACDA/input"
 modelName = "people_reg.h5"

@@ -1,7 +1,7 @@
 import tensorflow as tf
 from tensorflow.keras import layers, models, optimizers
 from tensorflow.keras.datasets import cifar10
-from Conv_DCFD_tf2 import *
+from Conv_DCFD_tf import *
 
 # Load the dataset
 (x_train, y_train), (x_test, y_test) = cifar10.load_data()
